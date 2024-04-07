@@ -1,8 +1,21 @@
 import './styles.css';
+import createHomeContent from './home';
+import createContactContent from './contact';
+import createMenuContent from './menu';
+
+
 
 function createHeader() {
     const header = document.createElement('header');
-    header.classList.add('header')
+    header.classList.add('header');
+
+    const logoDiv = document.createElement('div');
+    logoDiv.id = 'logo';
+    logoDiv.innerHTML = `
+    <h1>Hardwick Cafe</h1>
+  `;
+
+    logoDiv.classList.add('logo');
 
     const nav = document.createElement('nav');
     nav.classList.add('nav');
@@ -16,12 +29,14 @@ function createHeader() {
 
     const menuButton = document.createElement('button');
     menuButton.textContent = 'Menu';
+    menuButton.classList.add('nav-item');
     menuButton.id = 'menu';
 
     //ev
 
     const contactButton = document.createElement('button');
     contactButton.textContent = 'Contact';
+    contactButton.classList.add('nav-item');
     contactButton.id = 'contact';
 
 
@@ -29,6 +44,7 @@ function createHeader() {
     nav.appendChild(menuButton);
     nav.appendChild(contactButton);
 
+    header.appendChild(logoDiv);
     header.appendChild(nav);
     return header;
 }
@@ -49,11 +65,39 @@ function createFooter() {
     return footer;
 }
 
+function addEventListeners(mainContent) {
+    const homeButton = document.getElementById('home');
+    homeButton.addEventListener('click', () => {
+        mainContent.innerHTML = '';
+        mainContent.appendChild(createHomeContent());
+    });
+
+    const menuButton = document.getElementById('menu');
+    menuButton.addEventListener('click', () => {
+        mainContent.innerHTML = '';
+        mainContent.appendChild(createMenuContent());
+    });
+
+    const contactButton = document.getElementById('contact');
+    contactButton.addEventListener('click', () => {
+        mainContent.innerHTML = '';
+        mainContent.appendChild(createContactContent());
+    });
+}
+
+
+
 function initializeWebsite() {
     const content = document.getElementById('content');
+    const mainContent = createMainContent();
+
     content.appendChild(createHeader());
-    content.appendChild(createMainContent());
+    content.appendChild(mainContent);
     content.appendChild(createFooter());
+
+    addEventListeners(mainContent);
+
+    mainContent.appendChild(createHomeContent());
 
 }
 
