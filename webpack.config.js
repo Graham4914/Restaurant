@@ -23,6 +23,14 @@ module.exports = {
                     'css-loader',
                 ],
             },
+            {
+                test: /\.(png|svg|jpg|gif|jpeg)$/i,
+                type: 'asset/resource',
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/if,
+                type: 'asset/resource',
+            },
         ],
     },
 };

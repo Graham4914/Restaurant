@@ -66,25 +66,35 @@ function createFooter() {
 }
 
 function addEventListeners(mainContent) {
+    const buttons = document.querySelectorAll('.nav-item');
     const homeButton = document.getElementById('home');
     homeButton.addEventListener('click', () => {
         mainContent.innerHTML = '';
         mainContent.appendChild(createHomeContent());
+        setActiveButton(homeButton, buttons);
     });
 
     const menuButton = document.getElementById('menu');
     menuButton.addEventListener('click', () => {
         mainContent.innerHTML = '';
         mainContent.appendChild(createMenuContent());
+        setActiveButton(menuButton, buttons);
     });
 
     const contactButton = document.getElementById('contact');
     contactButton.addEventListener('click', () => {
         mainContent.innerHTML = '';
         mainContent.appendChild(createContactContent());
+        setActiveButton(contactButton, buttons);
     });
 }
 
+function setActiveButton(activeButton, buttons) {
+    buttons.forEach(button => {
+        button.classList.remove('active');
+    });
+    activeButton.classList.add('active');
+}
 
 
 function initializeWebsite() {
