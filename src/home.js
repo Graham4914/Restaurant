@@ -1,4 +1,4 @@
-import backgroundImage from './home';
+import backgroundImage from './HardwickCafe.jpg';
 
 function createHomeContent() {
     const homeContent = document.createElement('div');
@@ -7,9 +7,11 @@ function createHomeContent() {
     homeContent.style.backgroundSize = 'cover';
     homeContent.style.backgroundPosition = 'center';
     homeContent.innerHTML = `
-    <h2>Welcome to the Hardwick Cafe</h2>
-    <p>Enjoy the best food in town.</p>
-    <p>Welcome to our cozy corner of the web!</p>
+    <div class="backgroundDiv">
+    <h2>Indulge in Elegance at Hardwick Cafe</h2>
+    <p>Savor the creations of Celebrity Chef Jenny—where each dish is a masterpiece crafted with the freshest local produce. Experience a symphony of flavors in our relaxed, chic ambiance. Your culinary journey awaits.</p>
+    
+    </div>
     `;
     return homeContent;
 

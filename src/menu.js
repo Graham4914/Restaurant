@@ -1,10 +1,46 @@
+import starterDishImage from './salad.jpg';
+import mainDishImage from './salmon.jpg';
+import dessertDishImage from './panna-cotta.jpg';
+
+function createImageSlider(imageSources) {
+  const slider = document.createElement('div');
+  slider.classList.add('image-slider');
+
+  // Create an array to hold the image elements.
+  const imageElements = imageSources.map((src, index) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.classList.add('slide');
+    img.style.opacity = index === 0 ? '1' : '0';
+    slider.appendChild(img);
+    return img;
+  });
+
+  let current = 0;
+  setInterval(() => {
+    // Corrected: Ensure we're accessing the image elements correctly
+    const previous = current;
+    current = (current + 1) % imageElements.length;
+    imageElements[previous].style.opacity = '0'; // Fade out the previous image
+    imageElements[current].style.opacity = '1'; // Fade in the current image
+  }, 3000); // Change every 3 seconds
+
+  console.log(imageElements);
+  return slider;
+
+}
+
+
 function createMenuContent() {
-    const menuContent = document.createElement('div');
-    menuContent.classList.add('menu-content');
-    menuContent.innerHTML = `
+  const menuContent = document.createElement('div');
+  menuContent.classList.add('menu-content');
+
+  menuContent.innerHTML = `
+    <div class="menu-wrapper">
     <h2 class="menu-title">Menu</h2>
     <p class="intro">Enjoy the best food in town.</p>
     <div class="menu">
+    
   <div class="menu-section">
     <h2>Starters</h2>
     <div class="menu-item">
@@ -39,8 +75,14 @@ function createMenuContent() {
     </div>
   </div>
 </div>
+</div>
     `;
-    return menuContent;
+
+  const imageSlider = createImageSlider([starterDishImage, mainDishImage, dessertDishImage]);
+
+  menuContent.appendChild(imageSlider);
+
+  return menuContent;
 
 }
 
