@@ -62,11 +62,10 @@ header nav {
 }
 
 .main-content {
-    
     overflow-y: auto;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: center;    
     background-color: wheat;
     
@@ -80,11 +79,11 @@ header nav {
     left: 0;
     z-index: 10;
     display: flex;
-    min-height: fit-content;
+    height: 15vh;
     background-color: black;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
 }
 
 button {
@@ -137,11 +136,11 @@ button {
 .menu-section p {
     font-weight: normal;
     padding-bottom: 1rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
 }
 
 .menu-item h3 {
-font-size: 1.6rem;
+font-size: 1.7rem;
 font-weight:bolder;
 }
 
@@ -154,10 +153,11 @@ font-weight:bolder;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
-.home-content h2, .contact-content h2 {
+.home-content h2 {
     font-size: 4rem;
     color: #fff;
     text-align: center;
@@ -165,7 +165,9 @@ font-weight:bolder;
     transition: transform 0.3s ease-in-out;
 }
 
-.home-content p, .contact-content p {
+
+
+.home-content p {
     font-size: 2rem;
     color: #fff;
     text-align: center;
@@ -176,29 +178,46 @@ font-weight:bolder;
     margin-right: auto;
 }
 
+.contact-content h2 {
+    font-size: 5rem;
+    color:#fff;
+    text-align: center;
+    font-weight: 900;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in-out;
+   
+}
+
+.contact-content p {
+    font-size: 2rem;
+    color:#fff;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: lighter;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 
-.backgroundDiv {
-    background: rgba(0, 0, 0, 0.3); 
+ .backgroundDiv {
+    background: rgba(0, 0, 0, 0.2); 
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     padding: 1rem;
     display: inline-block;
-}
+} 
 
 .image-slider {
-    /* position: relative; */
     width: 100%;
     height: 100%;
     z-index: 0;
-
-
 }
 
 .slide {
     position: fixed;
     left: 0;
-    top:5rem;
+    top:4rem;
     width: 100%;
     height: 100%;
     transition: ease-in-out 3s;
@@ -207,6 +226,10 @@ font-weight:bolder;
 }
 
 @media screen  and (max-width:600px) {
+
+    .header {
+        height:10vh ;
+    }
     .logo h1 {
         font-size: 1.5rem;
     }
@@ -215,19 +238,47 @@ font-weight:bolder;
         max-width: fit-content;
     }
     .home-content h2 {
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
    .home-content p {
-    font-size: 1rem;
+    font-size: 1.3rem;
    }
 
    .nav-item {
-    font-size: .7rem;
+    font-size: .8rem;
     margin: 0 1rem;
    }
 
     .menu-wrapper.menu-title {
     font-size: 1rem;
+   }
+
+   .menu-title {
+    font-size: 3rem;
+   }
+   .intro {
+    font-size: 1.2rem;
+   }
+   .menu-section h2 {
+    font-size: 1.5rem;
+   }
+   .menu-item h3{
+    font-size: 1.2rem;
+   }
+   .menu-section p {
+    font-size: 1rem;
+   }
+   .menu-content {
+    padding:15vh 20px 20px 20px;
+   }
+   .slide {
+    top: 3rem;
+   }
+   .contact-content h2 {
+    font-size: 3rem;
+   }
+   .contact-content p {
+    font-size: 1.2rem;
    }
 }
 
@@ -240,24 +291,30 @@ font-weight:bolder;
     gap: 2rem;
     width: 100%;
     font-family: 'Dancing Script', cursive;
-    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
 }
 form {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    max-width: 100vw;
+    gap: 0.3rem;
+    width: 100%;
     align-items: center;
+    padding: 2rem;
 }
 
 input, textarea {
     height: 2rem;
-    min-width:  60%;
-    
+    width: 100%;
+    max-width: 500px;
+    min-width:  200px;
+
 }
 
 form button {
-    border: 1px solid white;
-    padding: 2px;
-    font-size: 1rem;
+    border: 2px solid white;
+    padding: 3px;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
+
