@@ -109,6 +109,8 @@ function initializeWebsite() {
 
     mainContent.appendChild(createHomeContent());
 
+    const homeButton = document.getElementById('home');
+    homeButton.classList.add('active');
 }
 
 initializeWebsite();

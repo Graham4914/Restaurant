@@ -172,7 +172,7 @@ font-weight:bolder;
     color: #fff;
     text-align: center;
     margin-top: 1rem;
-    font-weight: lighter;
+    font-weight:bold;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -189,7 +189,7 @@ font-weight:bolder;
 }
 
 .contact-content p {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color:#fff;
     text-align: center;
     margin-top: 1rem;
@@ -238,10 +238,11 @@ font-weight:bolder;
         max-width: fit-content;
     }
     .home-content h2 {
-        font-size: 2.3rem;
+        font-size: 2.5rem;
     }
    .home-content p {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 800;
    }
 
    .nav-item {
@@ -291,7 +292,7 @@ font-weight:bolder;
     gap: 2rem;
     width: 100%;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 
 }
 form {
